@@ -18,3 +18,7 @@ optional arguments:
   --port PORT, -p PORT  port number to tunnel
   -u U                  username
 ```
+
+### IP text file
+
+The IP text file is a simple file with the IP at the first line.
