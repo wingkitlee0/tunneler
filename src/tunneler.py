@@ -9,7 +9,7 @@ def isIPaddress(ip):
     else:
         return False
 
-if __name__=='__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", "-p", type=int, default=8889, help="port number to tunnel")
     parser.add_argument("-u", type=str, default=None, help="username")
@@ -28,3 +28,6 @@ if __name__=='__main__':
 
     print("Running: ", cmdline)
     os.system(cmdline)
+    
+if __name__=='__main__':
+    main()
