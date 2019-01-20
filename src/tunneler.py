@@ -13,13 +13,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", "-p", type=int, default=8889, help="port number to tunnel")
     parser.add_argument("-u", type=str, default=None, help="username")
-    parser.add_argument("ip", type=str, help="ip address or a text file with the ip address")
+    parser.add_argument("-ip", type=str, help="ip address or a text file with the ip address. \nDefault: read from TUNNELER_DEFAULT_IP env. variable")
     args = parser.parse_args()
 
     if args.u is None:
         args.u = ""
     else:
         args.u += "@"
+    
+    if args.ip is None:
+        args.ip = os.environ['TUNNELER_DEFAULT_IP']
+        print("Using default IP: ", args.ip)
       
     if isIPaddress(args.ip):
         cmdline = "ssh -N -f -L localhost:%i:localhost:%i %s%s" % (args.port, args.port, args.u, args.ip)
