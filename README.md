@@ -8,15 +8,14 @@ This script is useful for setting up a ssh tunnel to a remote machine, e.g., whe
 ## Usage
 
 ```
-usage: tunnel.py [-h] [--port PORT] [-u U] ip
-
-positional arguments:
-  ip                    ip address or a text file with the ip address
+usage: tunneler [-h] [--port PORT] [-u U] [-ip IP]
 
 optional arguments:
   -h, --help            show this help message and exit
   --port PORT, -p PORT  port number to tunnel
   -u U                  username
+  -ip IP                ip address or a text file with the ip address.
+                        Default: read from TUNNELER_DEFAULT_IP env. variable
 ```
 
 ### IP text file
