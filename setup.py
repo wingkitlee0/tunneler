@@ -12,14 +12,13 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wingkitlee0/tunneler",
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
+    packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     entry_points = {
-        'console_scripts': ['tunneler=tunneler:main'],
+        'console_scripts': ['tunneler=tunneler.tunneler:main'],
     }
 )
